@@ -9,14 +9,6 @@ get '/secret' do
   'psshwshwshpsh'
 end
 
-get '/voila' do
-  'aijsdjpcsaj'
-end
-
-get '/insult' do
-  'hehe ez'
-end
-
 get '/dog' do
   %(
   <div>
