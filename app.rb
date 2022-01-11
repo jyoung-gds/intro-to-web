@@ -2,18 +2,20 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 
 get '/' do
-  'Hello world!'
+  erb(:index)
 end
 
-get '/secret' do
-  'psshwshwshpsh'
+get '/random-dog' do
+  @name = ["Amigo", "Misty", "Almond"].sample
+  erb(:random_dog)
 end
 
-get '/dog' do
-  %(
-  <div>
-    <img src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Cute-Puppy-Background-Download-Free-1-620x388.jpg" style="border: 8px dashed red">
-  </div>
-  )
+post '/named-dog' do
+  p params
+  @name = params[:name]
+  erb(:named_dog)
+end
 
+get '/name-dog' do
+  erb(:form)
 end
